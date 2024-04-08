@@ -21,7 +21,7 @@ SCORE = 0
 font = pygame.font.SysFont("Verdana", 60)
 fontsmall = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("GAME_OVER", True, BLACK)
-road = pygame.image.load('racermaterials/ANimatedStreet.png')
+road = pygame.image.load('racer.materials/ANimatedStreet.png')
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Racer play")
 screen.fill(WHITE)
@@ -29,7 +29,7 @@ screen.fill(WHITE)
 class Silvercoin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('Image/silver.coin.png')
+        self.image = pygame.image.load('racer.materials/silver.coin.png')
         self.image = pygame.transform.scale(self.image,(40,40))
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40,SCREEN_WIDTH-40),0)
@@ -45,7 +45,7 @@ class Silvercoin(pygame.sprite.Sprite):
 class BronzeCoin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('Image/bronze.png')
+        self.image = pygame.image.load('racer.materials/bronze.coin.png')
         self.image = pygame.transform.scale(self.image,(40,40))
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40,SCREEN_WIDTH-40),0)
@@ -67,7 +67,7 @@ class BronzeCoin(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('coin.png')
+        self.image = pygame.image.load('racer.materials/gold.coin.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40,SCREEN_WIDTH-40),0)
 
@@ -85,7 +85,7 @@ class Coin(pygame.sprite.Sprite):
 class Foe(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('racermaterials/foe.png')
+        self.image = pygame.image.load('racer.materials/Enemy.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH-40), 0)
 
@@ -99,7 +99,7 @@ class Foe(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('racermaterials/Player.png')
+        self.image = pygame.image.load('racer.materials/Player.png')
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -173,7 +173,7 @@ while True:
         entity.move()
 
     if pygame.sprite.spritecollideany(P1, enemies):
-         pygame.mixer.Sound('racermaterials/crash.wav').play()
+         pygame.mixer.Sound('racer.materials/crash.wav').play()
          time.sleep(0.5)
 
          screen.fill(RED)
